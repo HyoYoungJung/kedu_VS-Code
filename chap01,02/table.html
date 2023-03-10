@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+<table border="1">
+    <caption>
+        최근에 본 영화들
+    </caption>
+    <tr>
+        <th>영화제목</th>
+        <th>연도</th>
+        <th>감독</th>
+        <th>평가</th>
+    </tr>
+    <tr>
+        <td>라이프 오브 파이</td>
+        <td>2013</td>
+        <td>이안</td>
+        <td>8.68</td>
+    </tr>
+    <tr>
+        <td>레미제라블</td>
+        <td>2012</td>
+        <td>톰후퍼</td>
+        <td>8.28</td>
+    </tr>
+    <tr>
+        <td>장고: 분노의 추적자</td>
+        <td>2012</td>
+        <td>타란티노</td>
+        <td>8.29</td>
+    </tr>
+</table><br>
+<p></p>
+    <figure> <!-- 테이블이 우측으로 이동 -->
+    <figcaption> <!-- 테이블 시작점에 맞춰 캡션 삽입됨 -->
+        <p>테이블의 열과 행을 합치는 태그</p> <!-- p태그에 감싸서 아래 여백 생긴 것임 -->
+    </figcaption>
+<table>
+    <table border="1" width="500px">
+        <tr>
+            <th>1열</th>
+            <th>2열</th>
+            <th>3열</th>
+        </tr>
+        <tr>
+            <td rowspan="2">1행 1열</td>
+            <td>1행 2열</td>
+            <td>1행 3열</td>
+        </tr>
+        <tr>
+            <td>2행 2열</td>
+            <td>2행 3열</td>
+        </tr>
+        <tr>
+            <td colspan="3">3행 1열</td>
+        </tr>
+    </table>
+    <figcaption>
+        행합치기 : rowspan, 열합치기 : colspan
+    </figcaption>
+</figure>
+</body>
+</html>
