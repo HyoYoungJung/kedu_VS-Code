@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: bisque;
+}
+
+/* 모바일 */
+/* 보통 Mobile First 방식 : 모바일 기준으로 만들고 -> 탭 -> 피씨) */
+#container {
+    width: 320px;
+    margin: 50px auto; /* 상하 50 좌우는 알아서 맞춰줘 */
+}
+
+.card { 
+    position: relative;
+    width: 320px;
+    height: 450px;
+    margin: 20px 10px;
+    border: 1px solid rgb(82, 60, 21);
+    background-color: rgba(250, 130, 93, 0.288);
+}
+
+.words {
+    position: absolute;
+    left: 10px;
+    top: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    width: 320px;
+    height: 206px;
+}
+
+/* 태블릿 */
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    #container {
+        width: 660px;
+        margin: 50px auto;
+    }
+
+    .card {
+        position: relative;
+        width: 640px;
+        height: 206px;
+    }
+    
+    .words {
+        position: absolute;
+        left: 320px;
+        top: 50px;
+        text-align: center;
+        width: 200px;
+    }
+}
+
+/* 피씨 */
+@media screen and (min-width: 1500px) {
+    img {
+        width: 300px;
+        height: 250px;
+    }
+
+    #container {
+        width: 1680px;
+        margin: 50px auto;
+    }
+    .card {
+        position: relative;
+        float: left; /* 카드를 가로로 배치 */
+        width: 530px;
+        height: 250px;
+        margin: 10px;
+        border: 1px solid white;
+    }
+    
+    .words {
+        position: absolute;
+        left: 310px;
+        top: 50px;
+        text-align: center;
+        width: 200px;
+    }
+}

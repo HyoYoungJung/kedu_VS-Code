@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery animation</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+
+        .dog, #dog2, #dog3, #dog4 {
+            display: none;
+            position: relative;
+            width: 120px;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        img{ display: block;}
+
+        #show {
+            display: block;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <!-- <img id="dog" class="dog" src="dog.jpg"
+    width="120px" height="100px" style="position: relative"><br> -->
+
+    <img id="dog" class="dog" src="dog.jpg">
+
+    <button id="show">Show it</button>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button><br>
+    <img id="dog2" src="dog.jpg">
+    <p></p>
+
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button><br>
+    <img id="dog3" src="dog.jpg">
+    <p></p>
+    
+    <button id="chaining">메소드 체이닝 시작</button>
+    <img id="dog4" src="dog.jpg">
+
+    <script>
+        // $(document).ready(function () { //$(function () 로 사용해도 O
+        //     $("button").click(function () {
+        //         $("#dog").show("900");
+        //     });
+        // });
+
+        //쇼 말고 토글 사용하면 나왔다 숨겼다 할수 있음
+        // $(function () {  
+        //     $("button").click(function () {
+        //         $("#dog").toggle("slow");
+        //     });
+        // });
+
+        //애니메이트 이동
+        // $(function () {  
+        //     $("button").click(function () {
+        //         $("#dog").animate({
+        //                     left: '100px'});
+        //     });
+        // });
+
+        //투명도
+        // $(function () {  
+        //     $("button").click(function () {
+        //         $("#dog").toggle()
+        //                 .animate({
+        //                     left: '100px',
+        //                     opacity:'0.5',
+        //                     width:'150px',
+        //                 });
+        //     });
+        // });
+
+        $(function () {  
+            $("#show").click(function () {
+                $(".dog").toggle()
+                        .animate({
+                            left: '100px',
+                            opacity:'0.5',
+                            width:'150px',
+                        });
+            });
+
+            $("#fadeIn").click(function(){
+                $("#dog2").fadeIn("slow");
+            });
+            $("#fadeOut").click(function(){
+                $("#dog2").fadeIn("slow");
+            });
+
+            $("#slideUp").click(function(){
+                $("#dog3").slideUp("slow");
+            });
+            $("#slideDown").click(function(){
+                $("#dog3").slideDown("slow");
+            });
+
+            $("#chaining").click(function(){
+                $("#dog4").show().fadeOut("slow").slideDown("slow");
+            });
+        });
+        
+    </script>
+</body>
+
+</html>

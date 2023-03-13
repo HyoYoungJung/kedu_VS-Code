@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        div {
+            width: 70px;
+            height: 50px;
+            margin: 10px;
+            display: inline-block;
+            background-color: blueviolet;
+        }
+
+        .next {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">3</div>
+    <div id="div4">4</div>
+    <div id="div5">5</div>
+    <script>
+        $(function () {
+            // let divWidth1 = 50;
+            // let divWidth2 = 50;
+            // let divWidth3 = 50;
+            // let divWidth4 = 50;
+            // let divWidth5 = 50;
+
+            // $("div1").click(function () {
+            //     let divWidth = $(this).width();
+            //     divWidth -= 10;
+            //     $(this).width(divWidth).addClass("next");
+            // });
+            // $("div2").click(function () {
+            //     let divWidth = $(this).width();
+            //     $(this).width(divWidth).addClass("next");
+            // });
+            // $("div3").click(function () {
+            //     let divWidth = $(this).width();
+            //     $(this).width(divWidth).addClass("next");
+            // });
+            // $("div4").click(function () {
+            //     let divWidth = $(this).width();
+            //     $(this).width(divWidth).addClass("next");
+            // });
+            // $("div5").click(function () {
+            //     let divWidth = $(this).width();
+            //     $(this).width(divWidth).addClass("next");
+            // });
+        });
+            
+        // $("div").click(function () {
+        //     let divWidth = $(this).width()
+        //     console.log($(this).width())
+        //     divWidth -= 10
+        //     $(this).width(divWidth).addClass("next");
+        // });
+
+        $("div").click(function () {
+            $(this).width($(this).width()-10).addClass("next");
+        });
+    </script>
+</body>
+
+</html>

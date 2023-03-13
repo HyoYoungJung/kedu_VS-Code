@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:100" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1> API Practice</h1>
+    <h2> KaKaO API를 이용한 도서 정보 가져오기</h2>
+    <hr>
+    
+    책 검색: <input type="text" id="bookname">
+    <button>검색</button>
+
+    <div class="container">
+        <div class="thumbnail"></div>
+        <p></p>
+    </div>
+
+    <script src="https://code.jQuery.com/jquery-1.10.1.js"></script>
+    <script>
+        $(function () {
+            $(":button").click(function () {
+                $.ajax({
+                        method: "GET",
+                        url: "https://dapi.kakao.com/v3/search/book?target=title",
+                        data: {
+                            // query: "총균쇠",
+                            query: $("#bookname").val(),
+                        },
+                        headers: {
+                            Authorization: "KakaoAK 52cc244d9cd66cf3b4a31e1e6f2f6f3f"
+                        },
+                    })
+                    .done(function (msg) { // 통신이 잘 돌아온다면
+                        console.log(msg);
+                        $("p").append(msg.documents[2].title); //검색하면 나오는 것들중 3번째 것 출력하겠다!
+                        $(".thumbnail").append('<img src="' + msg.documents[2].thumbnail + '"/>');
+                        $("p").append(msg.documents[1].title);
+                        $(".thumbnail").append('<img src="' + msg.documents[1].thumbnail + '"/>');
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

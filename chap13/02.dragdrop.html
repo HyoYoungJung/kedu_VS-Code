@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dragdrop</title>
+    <style>
+        #shopping-cart {
+            width: 600px;
+            height: 170px;
+            padding: 10px;
+            border: 3px dotted plum;
+        }
+        img {
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>여기에 제품을 끌어놓으세요</p>
+    <!-- 드래그,드롭 했을때 이벤트 걸어줌-->
+    <div id="shopping-cart" ondrop="handleDrop(event)" 
+        ondragover="allowDrop(event)"> 
+        
+    </div>
+    <!-- 드래그 가능, 드래그 시작되면 handleDragStart() 호출 -->
+    <img src="Bread.jpg" alt="빵" id="img1" draggable="true" 
+        ondragstart="handleDragStart(event)">
+    <img src="Brownie.jpg" alt="브라우니" id="img2" draggable="true"
+        ondragstart="handleDragStart(event)">
+    <img src="Dog wallet.png" alt="댕지갑" id="img3" draggable="true"
+        ondragstart="handleDragStart(event)">
+    <script>
+        function allowDrop(e){ //이벤트 e가 발생햇을 때
+            e.preventDefault(); //갖고있는 속성 제거
+        } 
+        function handleDragStart(e){ //드래그가 되면,
+            e.dataTransfer.effectAllowed = 'move'; //드래그의 이펙트:무브
+            e.dataTransfer.setData("Text", e.target.id); //타겟의 아이디(=img)
+        }
+        function handleDrop(e){ //드롭이 되면,
+            e.preventDefault(); //속성 무력화
+            const src = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(src));
+        }
+            
+    </script>
+</body>
+
+</html>

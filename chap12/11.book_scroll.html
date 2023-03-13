@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:100" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1> API Practice</h1>
+    <h2> KaKaO API를 이용한 도서 정보 가져오기</h2>
+    <input type="text" id="bookname">
+    <button id="search">검색</button>
+    <hr>
+
+    <div></div>
+
+    <script src="https://code.jQuery.com/jquery-1.10.1.js"></script>
+
+    <script>
+        $(function () {
+            let pageNum = 1;
+
+            //검색 기능
+            $("#search").click(function () {
+                $("div").html("");
+
+                $.ajax({
+                        method: "GET",
+                        url: "https://dapi.kakao.com/v3/search/book?target=title",
+                        data: {query: $("#bookname").val(), page: pageNum},
+                        headers: {Authorization: "KakaoAK 52cc244d9cd66cf3b4a31e1e6f2f6f3f"},
+                    })
+                    .done(function (msg) {
+                        console.log(msg);
+                        for (var i = 0; i < 10; i++) { //10개 불러오도록 포문 사용
+                            $("div").append("<h2><a href='" + msg.documents[i].url + "'>" + msg
+                                .documents[i].title + "</a></h2>");
+                            $("div").append("<strong>저자:</strong> " + msg.documents[i].authors +
+                                "<br>");
+                            $("div").append("<strong>출판사:</strong> " + msg.documents[i].publisher +
+                                "<br>");
+                            $("div").append("<strong>요약:</strong> " + msg.documents[i].contents +
+                                "...<br>");
+                            $("div").append("<img src='" + msg.documents[i].thumbnail + "'/><br>");
+                        }
+                    });
+            });
+
+            //10개 불러오고 나서 추가로 더 불러오도록
+            $(window).scroll(function(){
+                if(Math.ceil($(window).scrollTop())
+                + $(window).height() >= $(document).height() ){
+                    pageNum++;
+              
+                    $.ajax({
+                        method: "GET",
+                        url: "https://dapi.kakao.com/v3/search/book?target=title",
+                        data: {query: $("#bookname").val(), page: pageNum},
+                        headers: {Authorization: "KakaoAK 52cc244d9cd66cf3b4a31e1e6f2f6f3f"},
+                    })
+                    .done(function (msg) {
+                        console.log(msg);
+                        for (var i = 0; i < 10; i++) {
+                            $("div").append("<h2><a href='" + msg.documents[i].url + "'>" + msg
+                                .documents[i].title + "</a></h2>");
+                            $("div").append("<strong>저자:</strong> " + msg.documents[i].authors +
+                                "<br>");
+                            $("div").append("<strong>출판사:</strong> " + msg.documents[i].publisher +
+                                "<br>");
+                            $("div").append("<strong>요약:</strong> " + msg.documents[i].contents +
+                                "...<br>");
+                            $("div").append("<img src='" + msg.documents[i].thumbnail + "'/><br>");
+                        }
+                    });    
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

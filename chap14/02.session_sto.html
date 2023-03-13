@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><button type="button" onclick="incrementCounter()">눌러보세요!</button></p>
+    <div id="target"></div>
+
+    <script>
+        function incrementCounter(){
+            if(('sessionStorage' in window) && window['sessionStorage'] !== null) {
+                if (sessionStorage.count) {
+                    sessionStorage.count++;
+                }
+                else {
+                    sessionStorage.count = 1;
+                }
+                document.getElementById("target").innerHTML =
+                sessionStorage.count + "번 클릭하였습니다.";
+            }
+            else {
+                document.getElementById("target").innerHTML = 
+                "브라우저가 웹 스토리지를 지원하지 않습니다.";
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- 세션 스토리지는 브라우저당 한번 (새창 켜면 카운트 리셋됨) -->

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response Web Design</title>
+    <style>
+        .header {
+            width: 100%;
+            /* background-color: rgb(175, 122, 52); */
+        }
+
+        nav {
+            float: right;
+            width: 30%;
+            /* height: 200px; */
+            /* background-color: rgba(211, 173, 92, 0.801); */
+        }
+
+        .main {
+            float: left;
+            width: 70%;
+            height: 200px;
+            /* background-color: rgba(211, 173, 127, 0.801); */
+        }
+
+        .footer {
+            clear: both;
+            width: 100%;
+            /* background-color: rgba(163, 141, 114, 0.685); */
+        }
+
+        @media screen and (max-width: 980px) {
+            #page {
+                width: 94%
+            }
+
+            #main {
+                width: 65%
+            }
+
+            nav {
+                width: 30%
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            #main {
+                width: auto;
+                float: none;
+            }
+
+            nav {
+                width: auto;
+                float: none;
+            }
+        }
+
+        /* 모바일 버전 일때 */
+        @media screen and (max-width: 480px) {
+            header {
+                height: auto;
+            }
+            h2 { font-size: 24px; }
+            nav { display: none;}
+        }
+    </style>
+</head>
+
+<body id="page">
+
+    <header class="header">
+        <h2>Header</h2>
+    </header>
+
+    <nav class="nav">
+        <h2>Sidebar</h2>
+        <ul>
+            <li>Fluid Grids</li>
+            <li>Media Queries</li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <h2>Main</h2>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Ex quam quod dicta ducimus voluptatibus eum culpa recusandae,
+        obcaecati dolorem iure ratione quas rem iusto molestiae.
+        Esse omnis iste aspernatur voluptates?
+        Esse omnis iste aspernatur voluptates?
+        Esse omnis iste aspernatur voluptates?
+        Esse omnis iste aspernatur voluptates?
+    </main>
+
+    <footer class="footer">
+        <h2>Footer</h2>
+    </footer>
+
+</body>
+
+</html>
