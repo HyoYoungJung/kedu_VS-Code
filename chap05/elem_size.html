@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element size</title>
+    <style>
+        #target1{
+            width: 100px;
+            height: 50px;
+            /* 폭과 넓이 지정 안해주면 백그라운드 영역 달라짐 */
+            background-color: yellow;
+        }
+        #target2{
+            width: 100px;
+            height: 50px;
+            background-color: lightgreen;
+        }
+        div{
+            border: 1px solid red;
+            background-color: yellow;
+            width: 100px;
+            height: auto;
+            resize: both;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <p id="target1">이것은 p요소입니다. </p>
+    <div id="target2">이것은 div요소입니다. </div>
+    <div>박스의 크기를 조절하여 보세요!</div>
+</body>
+</html>

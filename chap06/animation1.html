@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>animation1</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: red;
+            position:relative;
+            animation: 2s myanim;
+            animation-iteration-count: 10;
+        }
+
+        @keyframes myanim
+        {
+            0% {left:0; top:0;}
+            25% {background-color: yellow; left:100px; top:0;}
+            50% {background-color:aqua left; left:200px; top:0;}
+            75% {background-color: blueviolet;  left:100px; top:0;}
+            100% {left:0; top:0;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

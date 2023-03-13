@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>고정 위치 설정</title>
+    <style>
+        .one {
+            background-color: lightgreen;
+            width: 200px;
+            height: 50px;
+        }
+        .two{ 
+            background-color: yellow;
+            width: 200px;
+            height: 80px;
+
+            position: fixed; /* 스크롤을 올려도 블럭2는 고정돼 있음 */
+            top: 0px;
+            right: 0px;
+        }
+        .three{
+            background-color: rgb(144, 160, 238);
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p class="one">block #1</p>
+
+    <p class="two">
+        block #2<br>
+        position: fixed;<br>
+        top:0px; right:0px;
+    </p>
+
+    <p class="three">block #3</p>
+    <p class="three">block #4</p>
+    <p class="three">block #5</p>
+    <p class="three">block #6</p>
+    <p class="three">block #7</p>
+    <p class="three">block #8</p>
+</body>
+</html>

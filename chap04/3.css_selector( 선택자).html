@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        #special{
+            background-color: beige;
+            color: red;
+        }
+        .type1{
+        text-align: center;
+        }
+        p.type1{
+            color: purple;
+        }
+        p, h1{ /* p와 h1의 폰트를 바꿈 */
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        body em{ color: red; } /* body의 후손인 em 아래의 모든 애들 다 빨간색으로 */
+        body > h1{ color: aqua; } /* body의 자식인 h1만 청록색으로. em은 후손이라 적용X */
+        /* h1 + h2 { color: chartreuse; } /* +는 인접형제선택자! h1 바로 뒤의 h2만 바뀜 */ 
+        /* h2 ~ h3 { color:pink; } /* ~는 일반형제 선택자! 물결 뒤에 *로 쓰면 h2 뒤의 모든 형제가 바뀜 */ 
+        h2 + h3 {color: blue;} /* h2의 바로 다음 h3만 적용(인접형제). 나머지 h3엔 적용 X */ 
+        h3 ~ h4 {color: violet;} /* h3 다음에 있는 h4 전부 다니까(일반형제) 멀리 떨어진 h4에도 적용됨 */
+
+        a:link{color: black;} /* 링크가 걸렸을 때 검정색으로 표시 */
+        a:visited{color: red;} /* 링크에 방문한 후에는 빨간색으로 표시 */
+        a:hover{color: green;} /* 링크 위에 마우스를 올렸을 때 초록으로 표시 */
+
+        /* 속성선택자 */
+        p[title] { color:crimson;} /* p단락의 title에 속성 줌 */
+        h1[class="type1"]{color: yellow;} 
+        /* 이미 전체 type1에 p.type1{color: purple;}으로 색을 줬지만, 또 따로 h1에만 지정해 줄 수O */
+
+    </style>
+</head>
+<body>
+    <p id="special">id가 스페셜인 단락입니다.</p> <!-- p#special{id가 스페셜인 단락입니다.} -->
+    <p title="title">정상적인 단락입니다.</p> <!-- p{정상적인 단락입니다.} -->
+    <h1 class="type1">class가 <em>type1</em>인 헤딩입니다.</h1> <!--h1.type1{class가 type1인 헤딩입니다.} -->
+    
+    <!-- h2~4는 클래스타입1이 아니기 때문에 가운데 정렬이 되지 않은 것 -->
+    <h2>h2 단락입니다.</h2> <!-- h2{h2 단락입니다.} -->
+    <h3>h3 단락입니다.</h3> <!-- h3{h3 단락입니다.} -->
+    <h3>h3 단락입니다.</h3>
+    <h4>h4 단락임</h4>
+    <h3>h3 단락입니다.</h3>
+    <h3>h3 단락입니다.</h3>
+    <h4>h4 단락입니다.</h4>
+
+    <p class="type1">class가 <a href="http://naver.com" target="_blank">type1</a>인 단락입니다.</p> <!-- p.type1{class가 type1인 단락입니다.} -->
+    
+</body>
+</html>

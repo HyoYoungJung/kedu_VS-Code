@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+/* ↑fonts.google.com에서 복붙해옴 */
+
+h1, p{
+    /* font-family: serif; */
+    color: black;
+}
+h1{
+    border-bottom: 1px solid gray;
+    color: red;
+}
+body{
+    background-color: skyblue;
+}

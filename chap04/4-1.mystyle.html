@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 외부스타일시트(mystyle.css를) 쓰려면 헤드 사이에 링크태그 써줌.
+    실무에선 이런 방식으로 작업! 예제3.css_selector 처럼 직접 쓰는건 연습용이지 좋은 방식X -->
+    <link type="text/css" rel="stylesheet" href="css/4-1.mystyle.css">
+    <style>
+        h1{ color:black;} /* 스타일 우선순위 3순위 */
+    </style>
+</head>
+<body>
+    <h1 style="color: yellow;">This is a headline. </h1> <!-- 스타일 우선순위 2순위 -->
+    <h1>This is a headline. </h1>
+    <h1>ddd</h1>
+    <p>This is a paragraph. </p>
+</body>
+</html>

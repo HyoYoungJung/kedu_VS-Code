@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog Page</title>
+    <style>
+        body { 
+            background-color: #efe5d0;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        #header {
+            background-color: rgb(224, 173, 250);
+            width: 100%;
+            padding: 5px;
+            text-align: center;
+        }
+        #nav {
+            display: table-cell; /* 테이블셀 사용하면 플롯-왼/오 안써도 됨 */
+            background-color: lightgoldenrodyellow;
+            width: 30%;
+            padding: 10px;
+        }
+        #section {
+            display: table-cell;
+            background-color: yellow;
+            width: 70%;
+            padding: 10px;
+        }
+        #footer {
+            background-color: brown;
+            clear: both;
+            text-align: center;
+            color: white;
+            padding: 2px;
+        }
+        ul {
+            list-style-type: none; /* 동그라미 없애기 */
+        }
+        ul li a {
+            text-decoration: none; /* 링크 밑줄 없애기 */
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>My Blog Page</h1>
+    </div>
+
+    <div id="nav">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.w3.org/">W3C</a></li>
+            <li><a href="https://www.mozilla.org/">MOZILLA</a></li>
+            <li><a href="https://htmldog.com/">HTML Dogs</a></li>
+        </ul>
+        <figure>
+            <img width="85" height="85" 
+                src="images/hong.png" 
+                alt="홍길동">    
+            <figcaption>홍길동</figcaption>
+        </figure>
+    </div>
+
+    <section id="section">
+        <article>
+            <h3>Semantic Tags</h3>
+            <P>
+                시멘틱 요소들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.
+            </P>
+        </article>
+
+        <article>
+            <h3>div와 span</h3>
+            <p>div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span 요소는 인라인 요소로서 텍스트를 위한 컨데이너로 사용할 수 있다.
+            </p>
+        </article>
+    </section>
+
+    <div id="footer">
+        Copyright (c) 2013 Hong
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>overflow</title>
+    <style>
+        p {
+            background-color: lightgreen;
+            width: 200px;
+            height: 50px;
+        }
+        div#target { /* 타겟이 부모임(div에 속해있으므로) */
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+            overflow: scroll;
+            /* overflow: auto; 
+                영역 넘어가면 스크롤이 자동 생성 */
+            /* overflow: hidden; 
+                오버플로우 없으면 지정영역 벗어남 */
+        }
+    </style>
+</head>
+<body>
+    <div id="target">
+        <p>block #1</p>
+        <p>block #2</p>
+        <p>block #3</p>
+        <p>block #4</p>
+        <p>block #5</p>
+    </div>
+</body>
+</html>

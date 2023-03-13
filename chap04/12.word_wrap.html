@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    p.test{
+        width: 15em; /* width 길이 안주면 컴퓨터가 알아서 길이 정함 */
+        /* width: 70%; */ /* 퍼센트로 주면 화면 크기 변화에 따라 보더라인도 자동으로 늘고 줄어서 더 좋음 */ 
+        border: 1px solid red;
+        word-wrap: break-word;
+        /* word-wrap: normal; */ /* 노말 쓰면 보더 라인 넘어가버림 */
+    }
+    </style>
+</head>
+<body>
+    <p class="test">매우 긴 단어가 있는 경우에 자동으로 잘라준다.
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+        <!-- 띄어쓰기 없이 한 단어로 인식되는 경우 자동줄바꿈되지 않는 듯,,, -->
+        <!-- 위 한글 문장은 자동 줄바꿈되지만 아래 aaa는 자동줄바꿈 안됨 -->
+    </p>
+    
+    <p>가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다가나다</p>
+    <!-- 일반적인 문자는 알아서 줄바꿈 안됨-->
+</body>
+</html>

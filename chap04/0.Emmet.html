@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet 실습</title>
+</head>
+<body>
+
+<!-- 계층인 경우 > 쓰고 tab 키 누르면 자동 생성 -->
+div>ul>li 
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+
+<!-- 형제 요소는 + 쓰고 tab 키 -->
+div+p+bq
+<div></div>
+<p></p>
+<blockquote></blockquote>
+
+<!-- ^(캐럿)은 상위레벨(p)과 같은 레벨로 만들어지는 것 -->
+div+div>p>span+em^bq 
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+    <blockquote></blockquote>
+</div>
+
+div+div>p>span+em^^^bq
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+</div>
+<blockquote></blockquote>
+
+<!-- p태그에 텍스트 넣어줌 -->
+p{Hello} 
+<p>Hello</p>
+
+
+<!-- 사이트 기획 시 뭔가로 채워야 할 때 로렘을 이요해 의미없는 텍스트들로 임의로 작성해줌 -->
+<!-- 영문 로렘은 lorem 이용하면 바로 들어오지만, 한글로렘은 '한글 로렘입숨' 검색해 생성 후 복붙해줘야 함 -->
+
+<!-- 임의의 단어 n개를 가져옴 -->
+p>lorem6 
+<p>Lorem ipsum dolor sit amet consectetur.</p>
+
+<!-- 곱하기를 쓰면 n개의 문장을 가져옴 -->
+p>lorem*6 
+<p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nam beatae! Quam voluptas, quisquam error debitis ut veritatis velit repudiandae voluptates commodi quibusdam dolore a nihil, possimus tenetur? Vitae, officia?</span><span>Numquam dolores ullam, nam consectetur ad aut velit esse enim quis eos! Quam nostrum iste eveniet aut voluptatum animi eum, cumque, sit dolores soluta at non vitae vero! Vel, minima?</span><span>Quasi atque iusto, neque ducimus ullam officiis, est distinctio culpa sequi, aperiam praesentium cupiditate magni impedit! Animi molestiae aperiam, velit vero, delectus id, cumque corrupti sit ducimus non nemo doloremque.</span><span>Molestias eaque at nesciunt ut laboriosam aliquam fuga praesentium quas aliquid accusamus sint deserunt qui, dolore quo iure ipsa, consequatur asperiores officia aperiam impedit? Ex perferendis cum laborum nam quaerat.</span><span>Culpa quo reiciendis eum temporibus recusandae illo tempora officia modi dolor quisquam harum voluptatem alias ut totam sit asperiores amet, commodi tempore consequuntur illum! Optio sapiente architecto facere illum aspernatur!</span><span>Suscipit animi cupiditate, magni eius non rerum a cum nostrum exercitationem vero pariatur doloribus sequi vel labore sunt inventore alias nihil ea reiciendis repellendus consequatur, fugit maxime porro! Natus, fugiat?</span></p>
+
+<!-- 한글 로렘은 웹에서 생성 후 복붙 -->
+<p>모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.</p>
+
+<p>대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다.</p>
+
+<p>비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다.</p>
+
+<!-- 응용 : li 2개짜리 3개 세트 -->
+div>(ul>li*2)*3 
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+</html>

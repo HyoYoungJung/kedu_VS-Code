@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin padding</title>
+    <style>
+        body{ /* 브라우저 기본 적용 값 전체를 무력화 시키고 시작하는 것이 편함 */
+            margin: 0px;
+            padding: 0px;
+        }
+        p{
+            margin: 0px;
+            padding: 0px;
+            background-color: yellow; border: 1px solid red;
+        }
+        #target{
+            margin: 10px;
+            padding: 20px;
+            background-color: lightgreen; border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <p>margin: 0px, padding 0px인 단락입니다.</p>
+    <p id="target">margin: 10px, padding: 20px인 단락입니다.</p>
+    <p id="practice">margin: </p>
+</body>
+</html>
