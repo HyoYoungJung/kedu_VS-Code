@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <audio src="../chap03_contents/old_pop.mp3" autoplay controls>
+            <!-- 해당 html파일과 오디오 컨텐츠의 소속 폴더가 다르기 때문에-->
+            <!-- ../폴더명/파일명을 해줘야 활성화 됨!!!! -->
+        Your browser does not support the audioi element.
+        </audio>
+
+        <audio autoplay controls> 
+            <!-- 브라우저마다 지원하는 파일 형식이 다르기 때문에 -->
+            <!-- 위에서부터 차례로 확인 후 지원 가능한 형식이면 재생하도록 기재한 것임 -->
+            <source src="../chap03_contents/old_pop.ogg" type="audio/ogg">
+            <source src="../chap03_contents/old_pop.mp3" type="audio/mp3">
+            <source src="../chap03_contents/old_pop.wav" type="audio/wav">
+        </audio>
+
+    </body>
+</html>

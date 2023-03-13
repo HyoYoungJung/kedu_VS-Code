@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>입력 태그 실습</title>
+</head>
+<body>
+    <form action="div1.html" method="post" enctype="multipart/form-data"> 
+    <!-- 제출버튼 누르면 페이지 오류 뜨는건 Go Live 오류이므로 myweb에서 실행테스트 ㄱ -->
+    <!-- 파일업로드 하고싶을때 enctype! -->
+
+    검색 : <input type="search" name="search"> <!-- 서치는 입력하면 엑스버튼 생기는게 차이점 -->
+
+    <fieldset> <!-- 입력요소 그룹핑에 사용 -->
+        <legend>인적사항 입력</legend> <!-- 그룹에 제목 붙임 -->
+        이름 : <input type="name" name="name" autofocus required><br> 
+        <!-- 오토포커스 : 커서 자동 생성--> <!-- 리콰이어드 : 필수 입력-->
+        학번 : <input type="text" name="number" size="10" placeholder="2022-11-05"><br> 
+        <!-- 플레이스홀더쓰면 미리 입력한 문구가 뜨고, 타이핑 시 사라짐 -->
+        패스워드 : <input type="password" name="password"><br>
+        
+        성별 : <!-- 라디오타입은 하나만 체크 가능 -->
+        <input type="radio" name="gender" value="male">남성
+        <input type="radio" name="gender" value="female">여성 <br>
+        
+        개인정보 동의 여부 : <!-- 레이블로 라벨링하기 -->
+        <lable for="yes">동의</lable>
+        <input type="radio" name="info" id="yes" value="yes">
+        <lable for="no">비동의</lable>
+        <input type="radio" name="info" id="no" value="no"><br>
+        <!-- 네임은 라디오의 네임, id는 라벨과 일치해야 함 -->
+    </fieldset>
+    <fieldset>
+        <legend>기타 입력사항</legend>
+        이메일 : <input type="email" name="email" readonly><br> 
+        <!-- 리드온리 : 입력 안받음. 커서도 안생김 -->
+        URL : <input type="url" name="url"><br>
+        전화번호 : <input type="tel" name="tel"><br>
+        색상 : <input type="color" name="color"><br>
+        월 : <input type="month" name="month"><br>
+        날짜 : <input type="date" name="date"><br>
+        주 : <input type="week" name="week"><br>
+        시간 : <input type="time" name="time"><br>
+    
+        지역 시간 : <input type="datetime-local" name="localdatetime"><br>
+        숫자 : <input type="number" name="number" min="1" max="10" step="2"><br>
+        범위 : <input type="range" name="range" min="1" max="10" step="2"><br>
+        <label>10초 남음</label>
+        <progress value="50" max="60"></progress>
+        <br>
+        <label>진행률30%</label>
+        <progress value="30" max="100"></progress>
+        <br>
+        <label>트래픽 초과</label>
+        <meter min="1024" max="10240" low="2048" high="8192" value="1000"></meter><br>
+        <!-- 밸류값 조절에 따라 막대 표시량&색깔 달라짐 -->
+        
+        <!-- 파일 업로드 태그 -->
+        파일 첨부 : <input type="file" accept="image/jpg,image/gif">
+    </fieldset>
+    <fieldset>
+        <legend>추가 선택 사항</legend>
+        과일 선택 : <!-- 체크박스는 중복 선택 가능. checked 붙이면 디폴트로 선택돼 나타남 -->
+        <input type="checkbox" name="fruits" value="apple" checked>사과
+        <input type="checkbox" name="fruits" value="grape">포도
+        <input type="checkbox" name="fruits" value="orange">오렌지 <br>
+
+        자동차 선택 : <!-- 셀렉트 요소 -->
+        <select name="cars">
+            <option value="bmw">BMW</option>
+            <option value="benz">Benz</option>
+            <option value="hyundai" selected>현대자동차</option>
+            <option value="kia">기아자동차</option>
+        </select> <br>
+    </fieldset>
+    <fieldset>
+        <!-- 텍스트에어리어 요소 -->
+        고객의 의견<br><textarea name="feedback" rows="3" cols="30"></textarea><br>
+        <input type="button" value="계산" onclick="alert('10000원 입니다.')">
+        <input type="submit" value="제출"><br>
+    </fieldset>
+        <!-- 이미지버튼 -->
+        <button type="submit"><img src="../chap03_contents/submit.png" width="80px" height="80px"></button> 
+        <input type="image" src="../chap03_contents/click-here-button.jpg" width="100px" height="50px" alt="제출 버튼">
+        <!-- 인풋은 닫는태그 없고, 버튼은 있음 -->
+        <!-- 버튼 태그는 폼 태그 밖에서 사용 권장 -->
+    </form>
+    <button type="button" onclick="alert('안녕하세요?')">눌러보세요!</button>
+    </body>
+</html>
