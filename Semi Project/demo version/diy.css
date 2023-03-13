@@ -1,0 +1,80 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/*layout : margin 0 auto로 화면을 가운대로 몰음*/
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    /* 폰트 : 나눔고딕, 삐침 없애기 */
+    font-family: 'Nanum Gothic', Sans-serif;
+    color: #202020;
+    /* 줄간격 : 1.4 */
+    line-height: 1.4
+}
+
+/* ↓ 세부 태그들 */
+
+
+/* 1번 섹션 태그 */
+
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+th {
+    text-align: left;
+    height: 60px;
+    /* border: 1px solid black;   */
+}
+
+td {
+    text-align: left;
+    height: 60px;
+}
+
+.td1 {
+    font-weight: 600;
+    color: pink;
+    font-size: 25px;
+}
+
+/* 2, 3번 섹션 태그 */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+}
+
+.box {
+    padding: 20px;
+}
+
+.text { 
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.outline {
+    padding: 10px;
+}

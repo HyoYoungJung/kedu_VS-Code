@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entertainment Main</title>
+    <link rel="stylesheet" href="css/Ent_main.css">
+</head>
+
+<body>
+    <!-- 기본 nav 포맷 시작 -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="#"><img src="images/logo(3).PNG" width="80" height="50">
+                <h1>우리동네플랫폼</h1>
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">enter</a></li>
+            <li><a href="#">Story</a></li>
+        </ul>
+        <ul class="navbar_login">
+            <li><a href="#a">로그인</a></li>
+            <li><a href="#a">회원가입</a></li>
+        </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    </nav>
+    <script>
+        // 변수선언
+        const toggleBtn = document.querySelector('.navbar_toggleBtn');
+        const menu = document.querySelector('.navbar_menu');
+        const login = document.querySelector('.navbar_login');
+
+        // navbtn을 클릭할때마다 아래함수들를 호출
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            login.classList.toggle('active');
+        });
+    </script>
+    <!-- 기본 nav 포맷 끝 -->
+
+
+    <!-- 내용 시작 -->
+
+    <!-- 랭킹 리스트 -->
+
+    <h2 class="text">가본 곳 후기</h2>
+
+    <div class="list-box rolling-ranking-container">
+
+        <!-- <div class="list-header">
+            <h2>가본 곳 후기</h2>
+        </div> -->
+
+        <div class="rank-chart">
+
+            <div class="best">
+
+                <div class="rank-header-title">
+                    <span>베스트 후기</span>
+                </div>
+
+                <div class="rank-list m-t-20">
+                    <ul>
+                        <li class="">
+                            <div class="ranking">1</div>
+                            <div class="class-title">투명하게 빛나는 나만의 물전사 시리얼 컵 만들기 DIY 키트</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">2</div>
+                            <div class="class-title">종이가 플라스틱이 된다고?! 슈링클스 키링 만들기</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">3</div>
+                            <div class="class-title">세상에서 가장 작은 꽃밭 플라워 캔들 만들기 DIY 키트</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">4</div>
+                            <div class="class-title">크리스마스에도 해피 스마일 마크라메 도어벨 만들기 DIY 키트</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">5</div>
+                            <div class="class-title">물전사 기법을 이용한 나만의 디저트 접시 만들기 DIY키트</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="latest">
+
+                <div class="rank-header-title">
+                    <span>신규 후기</span>
+                </div>
+
+                <div class="rank-list m-t-20">
+                    <ul>
+                        <li class="active">
+                            <div class="ranking">1</div>
+                            <div class="class-title">마크라메 크리스마스 오너먼트 가랜드 만들기 DIY KIT</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">2</div>
+                            <div class="class-title">[DIY 키트] 나만의 크리스마스 리스 만들기</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">3</div>
+                            <div class="class-title">서울타워 한국랜드마크 원목 3D 입체퍼즐 포스트카드 DIY</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">4</div>
+                            <div class="class-title">숭례문 한국랜드마크 원목 3D 입체퍼즐 포스트카드 DIY</div>
+                        </li>
+                        <li class="">
+                            <div class="ranking">5</div>
+                            <div class="class-title">근정전 한국랜드마크 원목 3D 입체퍼즐 포스트카드 DIY</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="outline">
+        <h2 class="text">요즘 뜨는 활동</h2>
+
+        <div class="flex">
+            <div class="box">
+                <a href="diy-1.html" id="atag">
+                    <img class="image" src="images/baking1.jpg"><br><br>
+                    <b>진하고 쫀득한 꾸덕 브라우니 만들기</b><br>
+                    45,000
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Leather craft.jpg"><br><br>
+                    <b>누구나 할 수 있는 가죽공예! 카드지갑 만들기</b><br>
+                    50,000
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Christmas wreath2.jpg"><br><br>
+                    <b>나만의 크리스마스리스 만들기</b><br>
+                    35,000
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="outline">
+        <h2 class="text">인기 순위 TOP3</h2>
+
+        <div class="flex">
+            <div class="box">
+                <a href="diy-1.html" id="atag">
+                    <img class="image" src="images/Knitting.jpg"><br><br>
+                    <b>곰손도 금손이 되는 니팅클래스</b><br>
+                    30,000
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Perfume1.jpg"><br><br>
+                    <b>전문 조향사와 함께 특별한 향수 만들기</b><br>
+                    50,000
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Latte art2.jpg"><br><br>
+                    <b>라떼아트 원데이클래스</b><br>
+                    50,000
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

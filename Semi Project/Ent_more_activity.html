@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entertainment More</title>
+
+    <link rel="stylesheet" href="css/Ent_more.css">
+
+</head>
+
+<body>
+    <!-- 기본 nav 포맷 시작 -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="#"><img src="images/logo(3).PNG" width="80" height="50">
+                <h1>우리동네플랫폼</h1>
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">enter</a></li>
+            <li><a href="#">Story</a></li>
+        </ul>
+        <ul class="navbar_login">
+            <li><a href="#a">로그인</a></li>
+            <li><a href="#a">회원가입</a></li>
+        </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    </nav>
+    <script>
+        // 변수선언
+        const toggleBtn = document.querySelector('.navbar_toggleBtn');
+        const menu = document.querySelector('.navbar_menu');
+        const login = document.querySelector('.navbar_login');
+
+        // navbtn을 클릭할때마다 아래함수들를 호출
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            login.classList.toggle('active');
+        });
+    </script>
+    <!-- 기본 nav 포맷 끝 -->
+
+
+    <!-- 내용 시작 -->
+    <div class="outline">
+        <ul class="list">
+            <h3>
+                <a href="#" class="list">
+                    <li>체험</li>
+                </a>
+                <a href="#" class="list">
+                    <li>여행</li>
+                </a>
+                <a href="#" class="list">
+                    <li>운동</li>
+                </a>
+                <!-- <a href="#" class="list"><li>음악</li></a> -->
+            </h3>
+        </ul>
+        <div class="flex">
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/baking1.jpg"><br><br>
+                    <b>체험 테마 1 </b><br>
+                    진하고 쫀득한 꾸덕 브라우니 만들기
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Leather craft.jpg"><br><br>
+                    <b>체험 테마 2 </b><br>
+                    누구나 할 수 있는 가죽공예! 카드지갑 만들기
+                </a>
+            </div>
+            <div class="box">
+                <a href="#" id="atag">
+                    <img class="image" src="images/Christmas wreath2.jpg"><br><br>
+                    <b>체험 테마 3 </b><br>
+                    나만의 크리스마스리스 만들기
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

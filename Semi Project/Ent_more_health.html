@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entertainment More</title>
+
+    <link rel="stylesheet" href="css/Ent_more.css">
+
+</head>
+
+<body>
+    <!-- 기본 nav 포맷 시작 -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="#"><img src="images/logo(3).PNG" width="80" height="50">
+                <h1>우리동네플랫폼</h1>
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">enter</a></li>
+            <li><a href="#">Story</a></li>
+        </ul>
+        <ul class="navbar_login">
+            <li><a href="#a">로그인</a></li>
+            <li><a href="#a">회원가입</a></li>
+        </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    </nav>
+    <script>
+        // 변수선언
+        const toggleBtn = document.querySelector('.navbar_toggleBtn');
+        const menu = document.querySelector('.navbar_menu');
+        const login = document.querySelector('.navbar_login');
+
+        // navbtn을 클릭할때마다 아래함수들를 호출
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            login.classList.toggle('active');
+        });
+    </script>
+    <!-- 기본 nav 포맷 끝 -->
+
+
+    <!-- 내용 시작 -->
+    <div class="outline">
+        <ul class="list">
+            <h3>
+                <a href="Ent_more_activity.html" class="list">
+                    <li>체험</li>
+                </a>
+                <a href="Ent_more_travel.html" class="list">
+                    <li>여행</li>
+                </a>
+                <a href="Ent_more_health.html" class="list">
+                    <li>운동</li>
+                </a>
+                <!-- <a href="#" class="list"><li>음악</li></a> -->
+            </h3>
+        </ul>
+
+        <div class="outline">
+            <div class="flex">
+                <div class="box">
+                    <a href="#" id="atag">
+                        <img class="image" src="images/Gwanak_mt.jpg"><br><br>
+                        <b>건강 테마 1 </b><br>
+                        신림선 개통으로 더 가까워진 관악산!<br>
+                        이번 주말엔 관악산 둘레길 ㄱㄱ?
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="#" id="atag">
+                        <img class="image" src="images/Soccer gwanak2.jpg"><br><br>
+                        <b>건강 테마 2 </b><br>
+                        관악구 낙성대 축구장<br>
+                        관악구민운동장 인조잔디 11대11 축구장
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="#" id="atag">
+                        <img class="image" src="images/Climbing2.jpg"><br><br>
+                        <b>건강 테마 3 </b><br>
+                        우리 집에서 가까운 클라이밍 센터는 어디?<br>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

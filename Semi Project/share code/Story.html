@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>Story</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        ul {
+            margin: auto auto auto auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            display: inline;
+
+            width: 95%;
+            max-width: 150px;
+            margin: 0px 20px 30px 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 3px 0px gray;
+            text-align: center;
+
+
+
+        }
+
+        img {
+            width: 100px;
+            height: 200px;
+        }
+
+        .mytitle {
+            width: 100%;
+            height: 250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-position: center;
+            background-size: cover;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mytitle > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: transparent;
+            color: white;
+
+            border-radius: 50px;
+            border: 1px solid white;
+
+            margin-top: 10px;
+        }
+
+        .mytitle > button:hover {
+            border: 2px solid white;
+        }
+
+        .mycomment {
+            color: gray;
+        }
+
+        .mycards {
+            margin: 20px auto 0px auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .mypost {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px gray;
+        }
+
+        .mybtns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+        }
+
+        .mybtns > button {
+            margin-right: 10px;
+        }
+
+        .section-title {
+
+            max-width: 150px;
+            margin: 20px auto 0px auto;
+
+            padding: 10px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+    <script>
+        function onDisplay() {
+            $(`#post`).show();
+            console.log("눌렸어요~")
+        }
+
+        function offDisplay() {
+            $(`#post`).hide();
+            console.log("닫기 눌렸어요~")
+        }
+        window.onload = offDisplay;
+
+    </script>
+</head>
+
+<body>
+
+
+<div class="mytitle" id="mytitle">
+    <h1>관악구 이야기</h1>
+    <button onclick="onDisplay()">Story 작성하기</button>
+</div>
+
+<div class="section-header">
+    <h2 class="section-title">
+        카테고리
+    </h2>
+    <div class="section-header-sub">
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="#010" aria-controls="010" role="tab" data-toggle="tab"
+                                                      data-code="010" aria-expanded="true">Food</a></li>
+            <li role="presentation"><a href="#029" aria-controls="029" role="tab" data-toggle="tab" data-code="029">Entertainment</a>
+            </li>
+            <li role="presentation"><a href="#029" aria-controls="029" role="tab" data-toggle="tab"
+                                       data-code="029">Life</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="mypost" id="post">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">제목</label>
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">별점</label>
+        <select class="form-select" id="inputGroupSelect01">
+            <option selected>-- 선택하기 --</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                  style="height: 100px"></textarea>
+        <label for="floatingTextarea2">코멘트</label>
+    </div>
+    <div class="mybtns">
+        <button type="button" class="btn btn-dark">기록하기</button>
+        <button type="button" class="btn btn-outline-dark" onclick="offDisplay()">닫기</button>
+    </div>
+</div>
+<div class="mycards">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="다운로드.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">관악산</h5>
+                    <p class="card-text">관악산의 정기를 받을 수 있는곳</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">관안삭 등산 후 칼국수가 끝내줍니다 .^^</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="KakaoTalk_20220930_111809290.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">강아지</h5>
+                    <p class="card-text">우리동네에서 제일 잘생긴 견</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">우리집 견빈이에요 ㅎㅎ</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="images.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">쿼카</h5>
+                    <p class="card-text">gs편의점 앞 쿼카</p>
+                    <p>⭐⭐⭐</p>
+                    <p class="mycomment">관악사거리 편의점에서 쿼카를 발견했어요!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="붕어빵.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">고구마붕어빵</h5>
+                    <p class="card-text">관악구 명물 고구마 붕어빵</p>
+                    <p>⭐⭐⭐</p>
+                    <p class="mycomment">너무 뜨거워서 입천장 디었네요. 불어서 드시길 ^^</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="붕어빵.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">고구마붕어빵</h5>
+                    <p class="card-text">관악구 명물 고구마 붕어빵</p>
+                    <p>⭐⭐⭐</p>
+                    <p class="mycomment">너무 뜨거워서 입천장 디었네요. 불어서 드시길 ^^</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="붕어빵.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">고구마붕어빵</h5>
+                    <p class="card-text">관악구 명물 고구마 붕어빵</p>
+                    <p>⭐⭐⭐</p>
+                    <p class="mycomment">너무 뜨거워서 입천장 디었네요. 불어서 드시길 ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

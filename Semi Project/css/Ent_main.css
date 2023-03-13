@@ -1,0 +1,282 @@
+/* 전체 공통 속성 */
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/*layout : margin 0 auto로 화면을 가운대로 몰음*/
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    /* 폰트 : 나눔고딕, 삐침 없애기 */
+    font-family: 'Nanum Gothic', Sans-serif;
+    color: #202020;
+    /* 줄간격 : 1.4 */
+    line-height: 1.4
+}
+
+/* 기본 nav 포맷 시작 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+    /* 리스트 볼릿을 없애기 */
+    list-style: none;
+    /* 링크 밑줄없애기 */
+    text-decoration: none;
+    /* 테이블의 따로있던선을 붙여준다. */
+    border-collapse: collapse;
+    /* 기본적으로 씌여있던 마진과 패딩을 없앤다. */
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.navbar a {
+    color: rgba(9, 19, 16, 0.782);
+}
+
+/* <-- navbar -->
+           display : flex; 목록들을 가로로 나란히 나열시킴
+           jsstify-content : space-between; 박스 사이 빈 공간을 넣어준다.
+           align-items : center는 navbar;에 있는 박스들을 navbar내에서 가운대 정렬
+           padding : 8px 12px navbar;에 공백은 위아래8px, 양 옆12px를 넣어 바짝 붙는 것을 방지시켰다.
+           position:sticky; top:0; 으로 스크롤을 내릴때 고정적으로 같이 내려오도록 설정
+           box-shadow : 1px 2px 3px gray;는 x축1px y축2px 번짐3px을 이용해 네비가 모든 layout-box위에 있는것처럼 효과를 넣어줬다.
+           */
+.navbar {
+    background-color: rgba(251, 255, 246, 0.732);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 2px 3px gray;
+
+}
+
+.navbar_logo {
+    font-size: 24px;
+}
+
+/* display : flex;로 메뉴 목록들을 가로로 위치하도록 변경
+           padding:left:0; 으로 지정해 공백이 생기는것을 방지
+         */
+.navbar_menu {
+    display: flex;
+    padding-left: 0;
+}
+
+/* padding : 8px 12px;로 각 메뉴마다 공간을 줬음. */
+.navbar_menu li {
+    padding: 8px 12px;
+
+}
+
+/* 마우스를 올릴시
+          color : 그린색
+          border-radius: 4px로 박스를 둥글게해줌 */
+.navbar_menu li:hover {
+    background-color: rgba(129, 187, 67, 0.745);
+    border-radius: 4px;
+}
+
+/* flex박스로 만들어 가로로 나열 */
+.navbar_login {
+    display: flex;
+    /* padding-left: 10px; */
+
+}
+
+/* border-right : 2px solid gray; 로그인과 회원가입 오른쪽에 구분선 표시 */
+.navbar_login li {
+    padding: 2.5px 10px 2.5px 10px;
+    border-right: 2px solid gray;
+}
+
+/* last-chile { border: none }로 회원가입 리스트를 지정 후 오른쪽에 표기되있던 선을 없앤다. */
+.navbar_login li:last-child {
+    border: none;
+}
+
+/* position:absolute; 로 내가 지정한 곳에 위치를 고정시킨다. 
+           right : 25px; top: 30px; 오른쪽끝으로부터 25px, 위에서부터 30px만큼 떨어진곳으로 메뉴버튼을 지정. 
+           display: none; 화면이 768px 전까지 메뉴버튼이 숨겨지도록 설정(media참조)*/
+.navbar_toggleBtn {
+    position: absolute;
+    right: 25px;
+    top: 30px;
+    display: none;
+
+}
+
+/* media를 사용하여 반응형으로 바꿔준다.
+         screen의 너비가 0부터 최대700px(반대로 너비가 700일때부터)
+         까지는 아래있는 코드들을 사용한다. */
+@media screen and (max-width: 700px) {
+
+    /* flex-direction:column;은 navbar 박스 내부의 박스들을 세로형태로 변형
+               align-items: flex-start; 내부 박스들을 왼쪽에서 시작할 수 있도록지정
+             */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    /*
+            display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정) 
+            flex-direction:column; menu들을 박스 내부의 박스들을 세로형태로 변형   
+            align-items: center는 박스 내 menu들이 가운대로 정렬되도록 한다.
+            width: 100%를 줘서 nume박스들의 공간을 줘 정상적으로 align-items가 작동하도록 함.*/
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* 위와 같은 방법 */
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정) */
+    .navbar_login {
+        display: none;
+        justify-content: center;
+        width: 100%
+    }
+
+    /* dlsplay:block; 으로 햄버거 메뉴 아이콘이 width가 700이하일때 보이도록 설정  */
+    .navbar_toggleBtn {
+        display: block;
+    }
+
+    /* 햄버거 메뉴 아이콘 클릭시 메뉴와 로그인창이 보이도록 설정(스크립트 이용) */
+    .navbar_menu.active,
+    .navbar_login.active {
+        display: flex;
+    }
+}
+
+/* 기본 nav 포맷 끝 */
+
+
+/* ↓ 세부 태그들 */
+
+/* 1번 섹션 태그 */
+
+.list-box {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ul, div {
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.05em;
+  } */
+
+/* 대제목~소제목 간격 */
+.rolling-ranking-container {
+    /* padding-top: 70px; */
+    padding-left: 120px;
+}
+
+/* 리스트 가로정렬 */
+.rolling-ranking-container .rank-chart {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* grid-template-rows: 100%;
+	height: 350px; */
+}
+
+/* 리스트 아웃라인 정렬 조정 */
+.rolling-ranking-container .rank-chart>div {
+    padding: 25px 15px;
+}
+
+/* 소제목~순위 간격 */
+.rolling-ranking-container .rank-header-title {
+    height: 20px;
+}
+
+/* 소제목 속성 */
+.rolling-ranking-container .rank-header-title>span {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 소제목1 텍스트 */
+.rolling-ranking-container .best .rank-header-title>span {
+    border: 1px solid #ff5862;
+    color: #ff5862;
+}
+
+/* 소제목2 텍스트 */
+.rolling-ranking-container .latest .rank-header-title>span {
+    border: 1px solid #f7b500;
+    color: #f7b500;
+}
+
+/* .hide{
+	display:none !important;
+} */
+
+/* 리스트 정렬 속성 */
+.rolling-ranking-container .rank-list ul li {
+    display: grid;
+    grid-template-columns: 30px auto;
+    /* align-items: center;
+    grid-template-rows: 100%; */
+    margin: 30px 0;
+    padding: 0px 15px;
+    /* cursor: pointer; */
+}
+
+/* 2, 3번 섹션 태그 */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+}
+
+.box {
+    padding: 20px;
+}
+
+.text {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.outline {
+    padding: 10px;
+}

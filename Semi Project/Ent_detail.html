@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entertainment Detail</title>
+    <link rel="stylesheet" href="css/Ent_detail.css">
+
+</head>
+
+<body>
+
+    <!-- 기본 nav 포맷 시작 -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="#"><img src="images/logo(3).PNG" width="80" height="50">
+                <h1>우리동네플랫폼</h1>
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">enter</a></li>
+            <li><a href="#">Story</a></li>
+        </ul>
+        <ul class="navbar_login">
+            <li><a href="#a">로그인</a></li>
+            <li><a href="#a">회원가입</a></li>
+        </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    </nav>
+    <script>
+        // 변수선언
+        const toggleBtn = document.querySelector('.navbar_toggleBtn');
+        const menu = document.querySelector('.navbar_menu');
+        const login = document.querySelector('.navbar_login');
+
+        // navbtn을 클릭할때마다 아래함수들를 호출
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            login.classList.toggle('active');
+        });
+    </script>
+    <!-- 기본 nav 포맷 끝 -->
+
+    <!-- 내용 시작 -->
+    <div class="outline">
+        <h1 class="title">관악구에서 축구하기 좋은 장소</h1>
+
+        <div class="user">
+            <div class="box">
+                <img class="profile" src="images/profile2.png">
+            </div>
+            <p>호동이88 </p>
+        </div>
+
+        <hr><br>
+
+        <!-- 게시글 이미지 -->
+        <img class="post_img" src="images/Soccer.jpg">
+
+        <div class="p_col_left">
+            <p class="maintext">
+                놀이 있는 것은 사막이다. 무엇을 얼음이 피가 미인을 못할 듣기만 옷을 거선의 힘차게 사막이다.
+                투명하되 못하다 속에 눈이 그들은 그리하였는가? 이상을 원대하고, 뭇 낙원을 청춘의 있음으로써 운다.
+                작고 유소년에게서 맺어, 뜨고, 끝까지 아름다우냐? 없으면 속에 뜨거운지라, 방지하는 위하여, 풀이 것이다.
+                얼음이 목숨을 길지 같이, 청춘의 아름다우냐?
+
+                역사를 청춘의 불어 영락과 하였으며, 가지에 우리 들어 이것이야말로 약동하다.
+                스며들어 풀이 위하여, 장식하는 봄바람이다. 없으면, 얼마나 무엇을 있는가? 보이는 크고 무엇이 어디 구할 아름다우냐?
+                뼈 소담스러운 없는 인생에 이상의 하여도 것은 그리하였는가? 인간이 전인 유소년에게서 커다란 보이는 아름다우냐?
+
+                있음으로써 피어나기 위하여서, 따뜻한 뜨고, 예수는 이것이야말로 청춘을 인생에 끓는다. 불러 모래뿐일 그들의 생명을 품에 것이다.
+                놀이 구하기 피는 천하를 같지 사막이다. 이것이야말로 인간이 가치를 노래하며 고동을 것이다. 힘차게 되는 아름답고 방황하여도,
+                가는 열락의 봄바람이다. 사랑의 시들어 광야에서 황금시대다. 풀밭에 이상, 기쁘며, 그들은 대중을 인류의 끓는 거선의 듣기만 부패뿐이다.
+            </p> 
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
