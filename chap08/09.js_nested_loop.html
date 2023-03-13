@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style> /* 상용님 스타일코드 */
+        table td, table th{
+            padding: 10px;
+        }
+        table td{
+            text-align: center;
+        }
+        tr:nth-child(2n - 1) td:nth-child(2n){ /* tr홀수-td짝수면 오렌지 */
+            background-color: orange;
+        }
+        tr:nth-child(2n-1) td:nth-child(2n-1){ /* tr홀수-td홀수면 사파이어 */
+            background-color: aquamarine;
+        }
+        tr:nth-child(2n) td:nth-child(2n){ /* tr짝수 td짝수면 아쿠아*/
+            background-color: aqua;
+        }
+        tr:nth-child(2n) td:nth-child(2n-1){ /* tr짝수 td홀수면 바이올렛 */
+            background-color: violet;
+        }
+        table th{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1>구구단표</h1>");
+        document.write("<table border=2 width=50%");
+        for(var i = 1; i <= 9; i++){
+            document.write("<tr>")
+            document.write("<td>" + i + "단" + "</td>");
+                for(var j = 2; j <= 9; j++){
+                    document.write("<td>" + i*j + "</td>");
+                }
+        document.write("</tr>");
+        }
+    </script>
+</body>
+</html>

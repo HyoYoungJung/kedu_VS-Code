@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원정보입력</title>
+    <link rel="stylesheet" href="css/webshop.css">
+
+</head>
+<body>
+    <div id="page-wrap">
+        <form>
+            <fieldset>
+                <legend>회원정보입력</legend>
+
+                <label for="id">아이디</label>
+                <input type="text" name="id" autofocus required>
+                <button>중복검사</button><br>
+
+                <label for="password1">패스워드</label>
+                <input type="password" name="password1"><br>
+
+                <label for="password2">패스워드 확인</label>
+                <input type="password" name="password2"><br>
+
+                <label for="name">이름</label>
+                <input type="text" name="name"><br>
+
+                <label type="tel">휴대폰 번호</label>
+                <input type="tel" name="tel"><br>
+
+                <label type="email">이메일</label>
+                <input type="email" name="email"><br>
+
+                <label type="date">생일</label>
+                <input type="date" name="birthday"><br>
+
+                <label type="url">홈페이지</label>
+                <input type="url" name="homepage"><br>
+
+                <input type="radio" name="gender" value="남성">남성<br>
+                <input type="radio" name="gender" value="여성">여성</div>
+            </fieldset>
+            <div id="button">
+            <input type="submit" name="submit" value="제출">
+            <input type="reset" name="reset" value="초기화">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

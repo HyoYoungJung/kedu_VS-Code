@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼의 공백 검증</title>
+    <style>
+        #submit{
+            border: 1px solid bisque;
+            background-color: rgb(161, 219, 255);
+        }
+        #msg1, msg2{
+            color: rgb(247, 124, 53);
+        }
+
+        #msg2{
+            color: rgb(247, 124, 53);
+        }
+
+    </style>
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form action="#">
+        <!-- 이름: <input type="text" id="name" onblur="checkBlank(this)"><br> -->
+        이름: <input type="text" id="name" onchange="checkBlank(this)"><br> <!-- 내용이 바꼈을때의 경우 -->
+        주소: <input type="text" id="addr" name="addr" onclick="display(this.form)"><br>
+        생일: <input type="date" id="birthday" name="birthday" ><br>
+        <div id="msg1"></div>
+        아이디(6~8자): <input type="text" id="username"><br>
+        <div id="msg2"></div>
+        이메일: <input type="email" id="email"><br>
+        휴대폰: <input type="tel" id="phone"><br>
+        <input type="button" id="submit" onclick="checkForm(this.form)" value="확인"><br>
+    </form>
+    <script>
+        function checkBlank(elem) {
+            if(elem.value.length < 2) {
+                alert("이름은 2자 이상 넣어주세요.");
+                //onblur 무한루프 방지를 위한 setTimeout 함수!
+                setTimeout(function(){
+                    elem.focus();
+                 }, 10);
+                
+                // return false;
+            }
+            return true;
+        }
+        function checkForm(form){
+            const username = document.getElementById("username").value;
+            console.log(username);
+            if (username.length ==0) {
+                document.getElementById("msg2").innerHTML = "필드가 비어있네요.";
+                document.getElementById("username").focus(); //조건에 걸렸을 시 커서가 다시 "username"으로 가도록 focus() 사용
+            } else if(!(username.length > 5 && username.length <9)){
+                document.getElementById("msg2").innerHTML = "아이디는 6~8 사이로 넣어주세요.";
+                console.log(username);
+                document.getElementById("username").focus(); //조건에 걸렸을 시 커서가 다시 "username"으로 가도록 focus() 사용
+            }
+            console.log(form["birthday"].value);
+
+            if (form["birthday"].value.length == 0){
+                document.getElementById("msg1").innerHTML = "생일을 입력하세요.";
+            }
+        }
+
+        function display(form) {
+            alert(form["addr"].value);
+        }
+    </script>
+</body>
+</html>

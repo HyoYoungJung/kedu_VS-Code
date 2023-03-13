@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프롬프트</title>
+</head>
+<body>
+    <script>
+        var age = prompt("나이를 입력하세요", "만나이로 입력합니다."); //프롬프트는 스트링으로 반환! 
+        var x, y;
+        var input;
+        
+        input = prompt("정수를 입력하세요", "정수로");
+        x = parseInt(input)
+        // x = input; //문자 25로 반환
+        
+        input = prompt("정수를 입력하세요", "정수로");
+        y = parseInt(input); 
+        // y = input; //문자 25로 반환
+        
+        document.write(x + y + "<br>"); //parseInt 하면 50, 안하면 2525 출력
+        
+    </script>
+</body>
+</html>

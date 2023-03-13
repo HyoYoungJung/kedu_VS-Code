@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>랜덤 조 짜기</title>
+</head>
+<body>
+    <!-- <script>
+    //1. 스트링에 명단 넣기
+    s = "곽호성, 김나영,김동완,김반석,김성진,김세훈,김용운,문수찬,박주현,서경원,성다영,안병준,오세원,유승민,장은비,장현수,정효영,조규범,조상용,차승현,최석호,한승현";    
+    
+    //2. 스트링을 잘라서 배열에 넣음
+    array = s.split(',');
+       // const myArray = new Array("곽호성","김나영","김동완","김반석","김성진","김세훈","김용운","문수찬","박주현","서경원","성다영","안병준","오세원","유승민","장은비","장현수","정효영","조규범","조상용","차승현","최석호","한승현");
+    
+    let count = [0, 0, 0, 0];
+
+    // 명단이 배열에 저장된 것 확인
+    for(i=0; i<array.length; i++){
+
+        random = parseInt(Math.random()*4)+1;
+        while (count[random-1] < 5) { 
+            random = parseInt(Math.random()*4)+1;
+        } 
+        count[random-1]++;
+
+
+        document.write(random + ' 조 ' + array[i] + count[random-1] + '명' + '<br>');
+    }
+
+    // 랜덤으로 6명 조 정하기
+    // document.write((Math.random(array)*21)+1);
+
+    
+    const randomValue = array[Math.floor(Math.random()*4)];
+    document.write(randomValue);
+
+    const team1 = new Array();
+
+
+    </script> -->
+
+
+
+    <!-- 곽호성님 코드 시작 -->
+    <!-- <script>
+    let member = new Array("곽호성","김나영","김동완","김반석","김성진","김세훈","김용운","문수찬",
+    "박주현","서경원","성다영","안병준","오세원","유승민","장은비","장현수","정효영","조규범",
+    "조상용","차승현","최석호","한승현");
+    let one = 1;
+
+    for(let i = 0 ; i<member.length; i++){
+        let n ;
+        let ran = parseInt(Math.random()*22);
+        
+        n = member[i];
+        member[i] = member[ran];
+        member[ran] = n;
+    }
+
+    for(let i = 0; i <member.length; i++){
+        if(i==0){
+            document.write( one +"조 : ");
+            one++;
+        }
+
+
+        document.write(member[i] + ", ");
+        
+        if((i+1)%5==0 && i <= 10){
+            document.write("<br><br>" + one + "조 : ");
+            one++;
+            }
+        else if((i+1)%16==0){
+            document.write("<br><br>" + one + "조 : ");
+            one++;
+        }
+    }
+    </script>  -->
+    <!-- 곽호성님 코드 끝 -->
+
+
+    <!-- 차승현님 코드 시작 (콘솔로그=>웹브라우저-검사에서 실행)  -->
+    <!-- <script>
+    var names = "곽호성,김나영,김동완,김반석,김성진,김세훈,김용운,문수찬,박주현,서경원,성다영,안병준,오세원,유승민,장은비,장현수,정효영,조규범,조상용,차승현,최석호,한승현";
+    var arrays = new Array();
+    var teams = names.split(",");
+
+    for (var y =0; y < 23; y++){
+        arrays[y] = "0";
+    }
+
+    for (var i =0; i < 23; i++){           
+        while(true){
+            if (i == 22){
+                break;
+            }
+            var team = parseInt(Math.random() * 22);
+                if (arrays[team] == "0"){
+                    arrays[team] = "1";
+                    break;
+                }                
+        }            
+            
+        if (i < 6){
+            console.log("1팀" + teams[team]);
+        } else if(i < 11){
+            console.log("2팀" + teams[team]);
+        } else if(i < 16){
+            console.log("3팀" + teams[team]);
+        } else if(i < 22){
+            console.log("4팀" + teams[team]);
+        }                                                          
+    }
+    </script>  -->
+    <!-- 차승현님 코드 끝 -->
+
+    <!-- 서경원님 코드 시작 -->
+    <!-- <form action="">
+    
+        <p id="num"></p>
+    </form>
+        <script>
+         document.write("<b>프로젝트 팀</b>")
+            
+            const 배열 = new Array("곽호성","김나영","김동완","김반석","김성진","김세훈","김용운","문수찬","박주현","서경원","성다영","안병준","오세원","유승민","장은비","장현수","정효영","조규범","조상용","차승현","최석호","한승현");
+            // document.write(배열)
+    
+           var i=0;
+           var con1=1;
+           var con2=1;
+           var con3=1;
+           var con4=1;
+           var j;
+                document.write("<br>")
+                while(i <=21){
+                    j=Math.floor((Math.random())*4+1)
+                    
+    
+                    if(j==1 && con1<=5){
+                        // document.write("con1: "+con1)
+                        con1++;
+                    }else
+                    if(j==2&&con2<=5){
+                        // document.write("con2: "+con2)
+                        con2++;
+                    }else
+                    if(j==3&&con3<=6){
+                        // document.write("con3: "+con3)
+                        con3++;
+                    }else
+                    if(j==4&&con4<=6){
+                        // document.write("con4: "+con4)
+                        con4++;
+                    }else{continue}
+                    // contunue 다시 while 돌아간다.
+                    document.write(배열[i]+" "+j+"팀"+"<br>");
+                    t=배열[i];  //22개 빈 배열완성 
+                    i++;
+    
+                }
+                // document.write("배열1 : "+배열[1]);
+        </script> -->
+    <!-- 서경원님 코드 끝 -->
+
+    <!-- 김동완님 코드 시작 -->
+    <!-- <script>
+        const membersdata =
+          "곽호성,김나영,김동완,김반석,김성진,김세훈,김용운,문수찬,박주현,서경원,성다영,안병준,오세원,유승민,장은비,장현수,정효영,조규범,조상용,차승현,최석호,한승현";
+        const members = membersdata.split(",");
+             let one = new Array(Math.floor(Math.random()*2)+5);
+             let two = new Array(Math.floor(Math.random()*2)+5);
+             let three,four;
+
+           if(one.length==two.length){
+              if(one.length==5){
+                  three = new Array(6);
+                  four = new Array(6);
+              }else{
+                  three = new Array(5);
+                  four = new Array(5);
+              }
+           }else{
+              three = new Array(Math.floor(Math.random()*2)+5);
+              if(three.length==5){
+                  four=new Array(6);
+              }else{
+                  four = new Array(5);
+              }
+           }
+
+          //  조 길이 구하기 끝
+          
+          let oneindex = 0;
+               let twoindex = 0;
+               let threeindex = 0;
+               let fourindex = 0;
+
+          for(let a= 0; a<members.length;a++){
+              let random = Math.floor(Math.random()*4);
+             if(random == 0){
+                if(oneindex==one.length){
+                    a--;
+                    continue;
+                }
+                one[oneindex++] = members[a];
+             }else if(random == 1){
+                if(twoindex==two.length){
+                    a--;
+                    continue;
+                }
+                two[twoindex++] = members[a];
+             }else if(random == 2){ 
+                if(threeindex==three.length){
+                   a--;
+                    continue;
+                } 
+                three[threeindex++] = members[a];
+             }else if(random == 3){
+                if(fourindex==four.length){
+                    a--;
+                    continue;
+                } 
+                four[fourindex++] = members[a];
+             }         
+          }
+          document.write("1조: ");
+          for(let a = 0; a<one.length;a++){
+            document.write(one[a]+" ");
+          }
+          document.write("<br>2조: ");
+          for(let a = 0; a<two.length;a++){
+            document.write(two[a]+" ");
+          }
+          document.write("<br>3조: ");
+          for(let a = 0; a<three.length;a++){
+            document.write(three[a]+" ");
+          }
+          document.write("<br>4조: ");
+          for(let a = 0; a<four.length;a++){
+            document.write(four[a]+" ");
+          }
+    </script> -->
+    <!-- 김동완님 코드 끝 -->
+    
+</body>
+</html>

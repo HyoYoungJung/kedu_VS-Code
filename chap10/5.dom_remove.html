@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기존의 HTML 요소 삭제</title>
+    <script>
+        function removeNode(){
+            //부모 요소까지 다 찾아서 부모가 가지고 있는 자식요소를 지운다
+            const parent = document.getElementById("target");
+            const child = document.getElementById("p1");
+            parent.removeChild(child);
+        }
+    </script>
+</head>
+<body>
+    <div id="target">
+    <p id="p1">첫 번째 단락</p>
+    <p id="p2">두 번째 단락</p>
+    </div>
+    <button onclick="removeNode()">누르세요!</button>
+</body>
+</html>

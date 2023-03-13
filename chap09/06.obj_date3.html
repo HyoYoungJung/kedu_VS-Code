@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운 타이머 만들기</title>
+</head>
+
+<body>
+    <div id="remaining"></div>
+    <script>
+        function datesUntilNewYear() {
+            const now = new Date(); //const는 상수 비슷하게 값 바꾸지않고 계속 쓰는 것
+            const newYear 
+            = new Date('January 1, ' + (now.getFullYear() + 1)); //(현재 연도) + 1= (내년) 의 (1월)
+            let diff = newYear - now;
+            const milliseconds = Math.floor(diff%1000);
+            diff = diff / 1000; //밀리세컨 / 1000
+            const seconds = Math.floor(diff % 60); //초 구하고, 나머지 버림
+            diff = diff / 60;
+            const minutes = Math.floor(diff % 60); //분 구하고, 
+            diff = diff / 60;
+            const hours = Math.floor(diff % 24); //시 구하고, 
+            diff = diff / 24;
+            const days = Math.floor(diff);      
+            
+            const str = "내년도 신정까지 " + days + "일, " + hours + "시간, " 
+            + minutes + "분, " + seconds + "초 남았습니다.";
+            document.getElementById("remaining").innerHTML = str;
+            
+            // 1초가 지나면 다시 함수를 호출
+            setTimeout("dateUntilNewYear()", 1000);
+        }
+        // 타이머를 시작
+        datesUntilNewYear();
+    </script>
+</body>
+</html>

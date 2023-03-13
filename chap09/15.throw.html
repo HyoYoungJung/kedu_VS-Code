@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예외 발생시키기</title>
+    
+</head>
+<body>
+    <!-- HTML 마크업 시작 -->
+    <h1>Number Guess</h1>
+    <p>1부터 100 사이의 숫자를 입력하시오.</p>
+    <input type="text" id="number">
+    <button type="button" onclick="test()">숫자 추측</button>
+    <p id="message"></p>
+    <!-- HTML 마크업 끝 -->
+
+    <script>
+        const solution = 53;
+        function test(){
+            try {
+                const x = document.getElementById("number").value;
+                //x가 비어있으면(아무값 없으면)
+                if (x=="") throw "입력내용 없음.";
+
+                //x가 숫자가 아니면
+                if (isNaN(x)) throw "숫자가 아니군요.";
+
+                //x가 솔루션보다 크면
+                if (x > solution) throw "숫자가 크네요.";
+
+                if (x < solution) throw "숫자가 작아요.";
+
+                if (x == solution) throw "성공!!";
+            } 
+            catch(error){
+                const y = document.getElementById("message"); //message = p태그의 id
+                y.innerHTML = "힌트 : " + error; //throw를 err이 받는 것
+            }
+        }
+    </script>
+
+</body>
+</html>

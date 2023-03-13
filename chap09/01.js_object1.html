@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myCar = { //익명 함수(객체) 개념 
+            model: "520d",
+            speed: 60,
+            color: "red",
+            brake: function() { this.speed -= 10;},
+            accel: function() {this.speed += 10;}
+        };
+
+        console.log(myCar);
+        console.log(myCar.color);
+        myCar.color = "yellow";
+        myCar.brake();
+        concole.log(myCar);
+    </script>
+</body>
+</html>

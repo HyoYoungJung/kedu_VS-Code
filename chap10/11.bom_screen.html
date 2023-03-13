@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full screen</title>
+</head>
+<body id="target" onload="onLoadDoc();">
+
+    <!-- 1을 true로 보면 됨 -->
+    <a href="#" onClick="maxopen('https://www.google.com',
+    'resize = 1, scrollbar = 1, status = 1'); return false">전체화면보기</a>
+
+    <a href="#" onclick="replace()">이동하기</a>
+    <br>
+    
+    <form method="POST">
+        <input type="radio" name="r1" value="blue" 
+        onclick="changeColor('lightblue')">파랑색
+        <input type="radio" name="r2" value="green"
+        onclick="changeColor('lightgreen')">초록색
+
+        <p>영어단어:
+            <input type="text" id="name" onchange="sub()">
+        </p>
+        <p>입력필드를 벗어나면 소문자로 변경이 됨.</p>
+
+        <div style="background-color: bisque; width: 200px"
+        onmouseover="over(this)" onmouseout="out(this)">
+            마우스를 이 요소위로 이동하세요.</div>
+    </form>
+        <button onmousedown="down(this)" onmouseup="up(this)">
+            눌러보세요
+        </button>
+
+    <script>
+        //전체 화면보기는 새창을 띄움
+        function maxopen(url, winatt){
+            const maxwindow = window.open(url, "", winatt);
+            maxwindow.moveTo(0,0);
+            maxwindow.resizeTo(screen.availWidth,screen.availHeight);
+        }
+        
+        //이동하기는 현재 창에서 페이지 띄움 (히스토리 O)
+        function replace(){
+            location.replace("https://www.google.com");
+        } 
+        
+
+        //정보 주르륵 나타남
+        // for (var key in navigator){
+        //     value = navigator[key];
+        //     document.write(key + ": " + value + "<br>");
+        // }
+
+
+        function changeColor(c){
+            document.getElementById("target").style.backgroundColor = c;
+        }
+        
+
+        // function onLoadDoc(){
+        //     alert("문서가 로드되었습니다.");
+        //     document.body.style.backgroundColor = "orange";
+        // }
+
+
+        function sub(){
+            const x = document.getElementById("name");
+            x.value = x.value.toLowerCase();
+        }
+
+
+        function over(elem){
+            elem.style.border="2px solid purple";
+        }
+        function out(elem){
+            elem.style.border="";
+        }
+
+
+        //누르고 있을때
+        function down(elem){
+            elem.style.backgroundColor = "yellow"; //배경은 노랑
+            elem.style.color = "#ff0000"; //글씨는 빨강
+        }
+        //눌렀다가 마우스 뗐을때
+        function up(elem){
+            elem.style.backgroundColor = "#000000"; //배경은 검정
+            elem.style.color = "#ffffff"; //글씨는 하얀
+        }
+    </script>
+</body>
+</html>

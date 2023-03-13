@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/webshop.css">
+</head>
+<body>
+    <div>
+    <form id="shopcart">
+        <table id="shoptable" border="1">
+            <caption>Shopping Cart</caption>
+            <tr>
+                <th>품목</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+            <tr>
+                <td>컴퓨터 세트</td>
+                <td>2,000,000원</td>
+                <td>
+                    <input type="number" name="count" min="0" step="1" value="0">
+                </td>
+                <td>
+                    <input type="text" size="6" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>티셔츠</td>
+                <td>50,000원</td>
+                <td>
+                    <input type="number" name="count" min="0" step="1" value="0">
+                </td>
+                <td>
+                    <input type="text" size="6" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>음악파일</td>
+                <td>1,000원</td>
+                <td>
+                    <input type="number" name="count" min="0" step="1" value="0">
+                </td>
+                <td>
+                    <input type="text" size="6" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>영화파일</td>
+                <td>5,000원</td>
+                <td>
+                    <input type="number" name="count" min="0" step="1" value="0">
+                </td>
+                <td>
+                    <input type="text" size="6" value="0">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="계산">
+        <input type="submit" value="구매">
+        <input type="reset" value="초기화"> 
+    </form>
+    <span id="mainlink"><a href="main.html">Back to home</a></span>
+    </div>
+</body>
+</html>

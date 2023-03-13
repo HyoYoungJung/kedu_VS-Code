@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try-Catch 구조</title>
+    <script>
+        let msg = "";
+        function test(){
+            try {
+                allert("Hello World!")//고의적으로 alert 오타내서 에러 발생시킴
+                // alert("Hello World!") //alert 쓰면 정상적으로 문구 팝업됨!
+            } catch (error) {
+                msg = "다음과 같은 오류가 발생하였음: " + error.message;
+                alert(msg);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="try-catch 시험" onclick="test()">
+</body>
+</html>
